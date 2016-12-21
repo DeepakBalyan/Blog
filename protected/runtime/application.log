@@ -1,0 +1,15 @@
+2016/12/21 11:47:03 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'Blog.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2016/12/21 11:47:15 [error] [exception.ParseError] ParseError: syntax error, unexpected 'public' (T_PUBLIC), expecting '{' in /home/deepak/Projects/Blog/protected/migrations/m161221_060945_user.php:5
+Stack trace:
+#0 /home/deepak/Projects/yii/framework/cli/commands/MigrateCommand.php(414): MigrateCommand->instantiateMigration('m161221_060945_...')
+#1 /home/deepak/Projects/yii/framework/cli/commands/MigrateCommand.php(109): MigrateCommand->migrateUp('m161221_060945_...')
+#2 [internal function]: MigrateCommand->actionUp(Array)
+#3 /home/deepak/Projects/yii/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#4 /home/deepak/Projects/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run(Array)
+#5 /home/deepak/Projects/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#6 /home/deepak/Projects/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#7 /home/deepak/Projects/yii/framework/yiic.php(33): CApplication->run()
+#8 /home/deepak/Projects/Blog/protected/yiic.php(7): require_once('/home/deepak/Pr...')
+#9 /home/deepak/Projects/Blog/protected/yiic(4): require_once('/home/deepak/Pr...')
+#10 {main}
+---

@@ -43,7 +43,19 @@ class User extends CActiveRecord
 	public function scopes() {
 		return array(
 			'active'=>array('condition'=>"status = :status_active", 'params'=>array('status_active'=>self::STATUS_ACTIVE)),
+			'deactivated'=>array('condition'=>"status = :status_deactivated", 'params'=>array('status_deactivated'=>self::STATUS_DEACTIVATED)),
+
 		);
+	}
+
+	public function deactivate() {
+		$this->status = User::STATUS_DEACTIVATED;
+		$this->save();
+	}
+
+	public function activate() {
+		$this->status = User::STATUS_ACTIVE;
+		$this->save();
 	}
 
 	public function beforeSave() {

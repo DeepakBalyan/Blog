@@ -35,6 +35,17 @@ class Comment extends CActiveRecord
 		);
 	}
 
+	Public function scopes() {
+		return array(
+			'active'=>array('condition'=>"status = :status_active", 'params'=>array('status_active'=>self::STATUS_ACTIVE)),
+		);
+	}
+
+	public function remove($id){
+		$this->status = 2;
+		$this->save();
+	}
+
 	public function beforeSave() {
 		if($this->isNewRecord) { 
 			$this->status = self::STATUS_ACTIVE;
